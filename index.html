@@ -1,1375 +1,356 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>李丹阳的简历</title>
-    <script type="text/javascript" src="./李丹阳的简历_files/js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="./李丹阳的简历_files/js/javascript.js"></script>
+    <title>Leaves Bookshelf</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
 
-    <!--report-->
-    <!--<script src="http://219.218.18.79/DL/lab/report.php?a=c" type="text/javascript"></script>-->
+    <!--Styles.-->
+    <noscript>
+        <link rel="stylesheet" href="resources/css/skel.css"/>
+        <link rel="stylesheet" href="resources/css/style.css"/>
+        <link rel="stylesheet" href="resources/css/style-wide.css"/>
+        <link rel="stylesheet" href="resources/css/style-normal.css"/>
+    </noscript>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="resources/css/ie/v8.css"/><![endif]-->
 </head>
-<body onload="settime();" style="background-color:#001c27;background-image:url(./李丹阳的简历_files/images/background.jpg);background-repeat:no-repeat;background-position:bottom right;background-attachment:fixed;">
-    
-    <!--底层-->
-    <div id="desktop" style="position: fixed;margin:-10px 0px 0px 0px;width:100%;height:100%;filter:alpha(Opacity=100);-moz-opacity:1;opacity: 1;z-index:1;">
-        <div id="board" style="color:#ffffff;font-size:20px;margin-top:36px;margin-left:80px;margin-right:80px;position:relative;text-shadow: 0px 5px 50px black;font-weight:900;z-index:100;border:2px">
-            <div id="boardA" style="float:left; width:580px; height:550px; border-right:20px solid transparent;"></div>
-            <div id="boardB" style="float:left; width:580px; height:550px; border-left:20px solid transparent; border-top:0px solid #0000FF; border-bottom:0px solid #0000FF;"></div>
-            <div id="boardC" style="float:left; width:580px; height:550px;"></div>
-        </div>
+<body>
+
+<!-- Header -->
+<header id="header">
+
+    <!-- Logo -->
+    <h1 id="logo">Leaves Bookshelf</h1>
+
+    <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="#intro">Intro</a></li>
+            <li><a href="#iLove">What I Love</a></li>
+            <li><a href="#iAm">Who I Am</a></li>
+            <li><a href="#work">My Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- Intro -->
+<section id="intro" class="main style1 dark fullscreen">
+    <div class="content container small">
+        <header>
+            <h2>Hey.</h2>
+        </header>
+        <p>Welcome to <strong>LiBook</strong>'s home page. I was an athlete. I am 90's. I will be a hacker. I love
+            watching movies.</p>
+        <footer>
+            <a href="#iLove" class="button style2 down">More</a>
+        </footer>
     </div>
-    
-    <!--状态和通知栏start-->
-    <div id="status_notification" style="top: 0px;background-color: black;color: #8EE5EE;font-size: 27px; left: 0px; width: 100%; z-index: 9000; position: fixed; height: auto;">&nbsp;
-        <div id="access" style="color:#959595;font-size:19px;left:10px;top:-50px;position :absolute;">
-            <a id="subtitle" href="http://www.cnblogs.com/libook/" target="_blank" style="text-decoration: NONE;color:#959595;">
-                <img src="./李丹阳的简历_files/images/access.png" style="height: 23px;top:4px;position :relative;"/>
-                点击访问 李丹阳 的主页
-            </a>
-        </div>
-        <div id="clock" style="top: -50px;right: 20px;position :absolute;"></div>
-        <div id="battery" style="top: -50px;position :absolute;">
-            <img src="./李丹阳的简历_files/images/bat_full.png" style="height: 23px;"/>
-        </div>
+</section>
+
+<!-- One -->
+<section id="iLove" class="main style2 right dark fullscreen">
+    <div class="content box style2">
+        <header>
+            <h2>What I Love</h2>
+        </header>
+        <p>
+            Hacking everything except your mind.
+            Watching high quality movies and dramas.
+            Athletics sometimes.
+            Great games like <a href="http://wikipedia.org/wiki/Minecraft" target="_blank">Minecraft</a> and <a
+                href="http://wikipedia.org/wiki/Reversi" target="_blank">Reversi</a>.
+            Girls and their cats.
+            Feeling and enjoying life.
+        </p>
     </div>
-    <!--状态和通知栏end-->
-    
-    <!--手指演示-->
-    <img id="fingerclick0" src="./李丹阳的简历_files/images/finger.png" style="display:none;top: 50%; right: 15%; width: auto; z-index: 10000; position: fixed; height: auto;"/>
-    <img id="fingerclick1" src="./李丹阳的简历_files/images/finger.png" style="display:none;top: 50%; right: 50%; width: auto; z-index: 11000; position: fixed; height: auto;"/>
-    
-    <!--导航栏start-->
-    <div id="navigation" style="bottom: 0px;background-color: black;color: #8EE5EE;font-size: 36px; left: 0px; width: 100%; z-index: 10000; position: fixed; height: auto;">&nbsp;
-        <img id="backbtn" src="./李丹阳的简历_files/images/back.jpg" style="bottom: -50px;left: 30%;position :absolute;height:40px;filter:sepia;"/>
-        <img id="mainbtn" src="./李丹阳的简历_files/images/main.jpg" style="bottom: -50px;left: 47.5%;position :absolute;height:40px;"/>
-        <img id="nextbtn" src="./李丹阳的简历_files/images/next.jpg" style="bottom: -50px;right: 30%;position :absolute;height:40px;"/>
+    <a href="#iAm" class="button style2 down anchored">Next</a>
+</section>
+
+<!-- Two -->
+<section id="iAm" class="main style2 left dark fullscreen">
+    <div class="content box style2">
+        <header>
+            <h2>Who I Am</h2>
+        </header>
+        <p>
+            My chinese name is 李丹阳. I am 90's. Working in Beijing.
+        </p>
     </div>
-    <!--导航栏end-->
-    
-    <!--信息面板start-->
-    <div id="infopanel" style="display: none;width:526px;height:556px;margin-right: 300px; margin-left: auto;filter:alpha(Opacity=70);-moz-opacity:0.7;opacity: 0.7;z-index:9900; background-color:black;"></div>
-    <div id="infolabel0" style="display: none;top: 41px;background-color: black;color: #8EE5EE;right: 661px;font-size: 30px; width: 170px;height:170px; z-index: 9998; position: fixed;"><img src="./李丹阳的简历_files/images/me.jpg" style="height:170px;"/>&nbsp;</div>
-    <div id="infolabel1" style="display: none;top: 41px;background-color: black;color: #8EE5EE;right: 487px;font-size: 30px; width: 170px;height:170px; z-index: 9998; position: fixed;"><div style="color:#959595;font-size:30px;top:39%;left:24%;position:absolute;">工&nbsp;&nbsp;作</div></div>
-    <div id="infolabel2" style="display: none;top: 41px;background-color: black;color: #8EE5EE;right: 313px;font-size: 30px; width: 170px;height:170px; z-index: 9998; position: fixed;"><div style="color:#959595;font-size:30px;top:39%;left:24%;position:absolute;">项&nbsp;&nbsp;目</div></div>
-    <div id="infolabel3" style="display: none;top: 215px;background-color: black;color: #8EE5EE;right: 661px;font-size: 30px; width: 170px;height:170px; z-index: 9998; position: fixed;"><div style="color:#959595;font-size:30px;top:39%;left:24%;position:absolute;">教&nbsp;&nbsp;育</div></div>
-    <div id="infolabel4" style="display: none;top: 215px;background-color: black;color: #8EE5EE;right: 487px;font-size: 30px; width: 170px;height:170px; z-index: 9998; position: fixed;"><div style="color:#959595;font-size:30px;top:39%;left:24%;position:absolute;">能&nbsp;&nbsp;力</div></div>
-    <div id="infolabel5" style="display: none;top: 215px;background-color: black;color: #8EE5EE;right: 313px;font-size: 30px; width: 170px;height:170px; z-index: 9998; position: fixed;"><div style="color:#959595;font-size:30px;top:39%;left:24%;position:absolute;">其&nbsp;&nbsp;他</div></div>
-    <div id="infolabel6" style="display: none;top: 389px;background-color: black;color: #8EE5EE;right: 661px;font-size: 30px; width: 170px;height:170px; z-index: 9998; position: fixed;"><div style="color:#959595;font-size:30px;top:39%;left:24%;position:absolute;">时间轴</div></div>
-    <div id="infolabel7" style="display: none;top: 389px;background-color: black;color: #8EE5EE;right: 487px;font-size: 30px; width: 170px;height:170px; z-index: 9998; position: fixed;"><div style="color:#959595;font-size:30px;top:39%;left:24%;position:absolute;">&nbsp;MBTI</div></div>
-    <div id="infolabel8" style="display: none;top: 389px;background-color: black;color: #8EE5EE;right: 313px;font-size: 30px; width: 170px;height:170px; z-index: 9998; position: fixed;"><div style="color:#959595;font-size:30px;top:39%;left:24%;position:absolute;">关&nbsp;&nbsp;于</div></div>
-    
-    <div id="infolabel0_back" style="display: none;top: 41px;background-color: black;color: #8EE5EE;right: 661px;font-size: 30px; width: 170px;height:170px; z-index: 9999; position: fixed;filter:alpha(Opacity=85);-moz-opacity:0.85;opacity: 0.85;"><div style="color:#959595;font-size:30px;top:40%;left:30%;position:absolute;">简&nbsp;&nbsp;介</div></div>
-    <!--信息面板end-->
+    <a href="#work" class="button style2 down anchored">Next</a>
+</section>
 
+<!-- Work -->
+<section id="work" class="main style3 primary">
+    <div class="content container">
+        <header>
+            <h2>My Work</h2>
 
-<!---------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------->
+            <p>
+                I am a
+                <strong>full stack developer</strong>
+                in
+                <a href="http://guanghe.tv" target="_blank"><strong>Guanghe.tv</strong></a>
+                .
+                We are a team of young.
+                Our wish is to change chinese education with using internet technology.
+                I love to work with dreamers and creators.
+            </p>
+        </header>
 
-
-
-<!--源start-->
-    <div class="resumeBody" style="display:none;z-index=200">
-    
-    
-    
-        <div id="str0">
-            <div style="float:left; width:420px; height:550px; border-right:20px solid transparent;padding-left: 4em;border-left:1px solid transparent;">
-                <h1 style="text-indent:-2em;">简介</h1>
-                <h1>李丹阳<img id="myphoto" src="./李丹阳的简历_files/images/me_big.jpg" alt="" width="105" height="135" class="headerImg" align="right"></h1>
-                <style>
-                    #myphoto{
-                        margin-right:100px;margin-top:-50px;
-                        animation:myphoto 2s;
-                        -moz-animation:myphoto 2s; /* Firefox */
-                        -webkit-animation:myphoto 2s; /* Safari and Chrome */
-                        -o-animation:myphoto 2s; /* Opera */
-                        transform-origin:0 135;
-                        -webkit-transform-origin:0 0;
-                        -moz-transform-origin:0 0;
-                        -o-transform-origin:0 0;
-                        -ms-transform-origin:0 0;
-                    }
-                    @keyframes myphoto
-                    {
-                        0%      {transform: rotate(0deg);}
-                        50%     {transform: rotate(45deg);}
-                        100%    {transform: rotate(0deg);}
-                    }
-                    @-webkit-keyframes myphoto
-                    {
-                        0%      {-webkit-transform: rotate(0deg);}
-                        50%     {-webkit-transform: rotate(45deg);}
-                        100%    {-webkit-transform: rotate(0deg);}
-                    }
-                    @-moz-keyframes myphoto
-                    {
-                        0%      {-moz-transform: rotate(0deg);}
-                        50%     {-moz-transform: rotate(45deg);}
-                        100%    {-moz-transform: rotate(0deg);}
-                    }
-                    @-o-keyframes myphoto
-                    {
-                        0%      {-o-transform: rotate(0deg);}
-                        50%     {-o-transform: rotate(45deg);}
-                        100%    {-o-transform: rotate(0deg);
-                    }
-                    @-ms-keyframes myphoto
-                    {
-                        0%      {-ms-transform: rotate(0deg);}
-                        50%     {-ms-transform: rotate(45deg);}
-                        100%    {-ms-transform: rotate(0deg);}
-                    }
-                </style>
-                <br>
-                <br>
-                男 <span class="ver-line">|</span>
-                <span>未婚 <span class="ver-line">|</span></span> 
-                1992年1月生 <span class="ver-line"><br></span>
-                户口：河北唐山 <span class="ver-line">|</span> 
-                现居住于天津东丽 <br>
-                团员 <span class="ver-line">|</span>
-                <p>曲阜师范大学杏坛学院日照校区  </p> 
-                E-mail：<a href="mailto:libook7@qq.com">libook7@qq.com</a> <br>
-                <span>博客：<a href="http://www.cnblogs.com/libook/">http://www.cnblogs.com/libook/</a></span>
-            </div>
-            
-            <div id="str0B" style="float:left; width:580px; height:550px;border-right:1px solid transparent; border-left:20px solid transparent; border-top:0px solid #0000FF; border-bottom:0px solid #0000FF;">
-                <dt><h2>求职意向</h2></dt>
-                <dd>
-                <ul>
-                <li style="padding-left: 5em;text-indent: -5em;"><strong>工作性质：</strong>全职、实习</li>
-                <li style="padding-left: 5em;text-indent: -5em;"><strong>期望职业：</strong>计算机软件/系统集成、技术支持/维护工程师、计算机硬件维护工程师</li>
-                <li style="padding-left: 5em;text-indent: -5em;"><strong>期望行业：</strong>计算机软件、IT服务（系统/数据/维护）</li>
-                <li style="padding-left: 5em;text-indent: -5em;"><strong>工作地区：</strong>北京、天津、唐山、青岛</li>
-                <li style="padding-left: 5em;text-indent: -5em;"><strong>期望月薪：</strong>城市人均收入的30%（希望升薪空间大）</li>
-                <li style="padding-left: 5em;text-indent: -5em;"><strong>目前状况：</strong>应届(2014届)毕业生</li>
-                </ul>
-                </dd>
-                <dt><h2>自我评价</h2></dt>
-                <dd>
-                <p style="text-indent:2em;">具有高度可塑性，热爱计算机，拥有黑客精神。有自己的学习方法，较强的远见、组织能力、应变能力和交流水平，有集体荣誉感与责任感，肯吃苦，擅长业务逻辑与实践创新。熟练使用C#.net、Java、PHP、HTML、Javascript、CSS等语言，熟练使用MySQL数据库管理系统、（喜爱）Linux操作系统、WinServer操作系统，掌握（神奇的）JQuery、EasyUI等架构，深入了解CMS，精通计算机软硬件维修与维护。曾是专业运动员。</p>
-                </dd>
-            </div>
-        </div>
-        
-        
-        
-        <div id="str1">
-            <div id="str10">
-                <div style="float:left; margin-left:190px; width:780px; height:550px;">
-                    <dt style="text-indent:-4em;"><h1>工作经历(1/3)</h1></dt>
-                    <div class="work-experience">
-                    <p>2011/06 -- 2013/07</p>
-                    <h3>曲阜师范大学日照校区 <span class="ver-line">|</span> 学团办公室网络技术部 <span class="ver-line">|</span> 副部长兼网络管理员 </h3>
-                    <p>
-                    <span> 行业类别：政府/公共事业/非盈利机构 <span class="ver-line">|</span> </span>
-                    <span>企业性质：事业单位 <span class="ver-line">|</span> </span>
-                    <span> 企业规模：500人 <span class="ver-line">|</span> </span>
-                    <span> 职位月薪：1000元/月以下</span>
-                    </p>
-                    <p>
-                    <strong>工作描述：</strong><br>
-                    <div style="text-indent:2em;">
-                    本职位为带薪职位；负责学团网站的开发、维护，服务器的配置、维护，专攻网络与网站的安全（对常规的网络攻击有一定的了解）；此外还负责协调学校各部门网络环境的维护，并提供技术支持。
-                    </div>
-                    </p>
-                    </div>
+        <!-- Lightbox Gallery  -->
+        <div id="work_picture_wall" class="container small gallery">
+            <div class="row flush images">
+                <div class="6u">
+                    <a href="http://libook.com.cn/StaticSites/OfficePics/DSC_0701.jpg"
+                       class="image fit from-left">
+                        <img src="#" delayedsrc="http://libook.com.cn/StaticSites/OfficePics/DSC_0701.jpg"
+                             title="The Anonymous Red" alt=""/>
+                    </a>
+                </div>
+                <div class="6u">
+                    <a href="http://libook.com.cn/StaticSites/OfficePics/DSC_0703.jpg"
+                       class="image fit from-left">
+                        <img src="#"
+                             delayedsrc="http://libook.com.cn/StaticSites/OfficePics/DSC_0703.jpg"
+                             title="The Anonymous Red" alt=""/>
+                    </a>
                 </div>
             </div>
-            
-            <div id="str11">
-                <div style="float:left; margin-left:190px; width:780px; height:550px;">
-                    <dt style="text-indent:-4em;"><h1>工作经历(2/3)</h1></dt>
-                    <div class="work-experience">
-                    <p>2010/06 -- 2010/09</p>
-                    <h3>河北省唐山市北方购物广场 <span class="ver-line">|</span> 电脑销售部 <span class="ver-line">|</span> 售前/售后技术支持工程师 </h3>
-                    <p>
-                    <span> 行业类别：零售/批发 <span class="ver-line">|</span> </span>
-                    <span>企业性质：民营 <span class="ver-line">|</span> </span>
-                    <span> 企业规模：100-499人 <span class="ver-line">|</span> </span>
-                    <span> 职位月薪：1000元/月以下</span>
-                    </p>
-                    <p>
-                    <strong>工作描述：</strong><br>
-                    <div style="text-indent:2em;">
-                    进行电脑上门装配以及售后服务，熟练地维修各种品牌台式机、笔记本的硬件和软件问题，还负责将硬件故障的保修期内的电脑送至对应品牌的维修站进行保修。
-                    </div>
-                    </p>
-                    </div>
+            <div class="row flush images">
+                <div class="6u">
+                    <a href="http://libook.com.cn/StaticSites/OfficePics/DSC_0705.jpg"
+                       class="image fit from-left">
+                        <img src="#"
+                             delayedsrc="http://libook.com.cn/StaticSites/OfficePics/DSC_0705.jpg"
+                             title="The Anonymous Red" alt=""/>
+                    </a>
+                </div>
+                <div class="6u"><a href="http://libook.com.cn/StaticSites/OfficePics/DSC_0706.jpg"
+                                   class="image fit from-left">
+                    <img src="#"
+                         delayedsrc="http://libook.com.cn/StaticSites/OfficePics/DSC_0706.jpg"
+                         title="The Anonymous Red" alt=""/>
+                </a>
                 </div>
             </div>
-            
-            <div id="str12">
-                <div style="float:left; margin-left:190px; width:780px; height:550px;">
-                    <dt style="text-indent:-4em;"><h1>工作经历(3/3)</h1></dt>
-                    <div class="work-experience">
-                    <p>2010/06 -- 2010/09</p>
-                    <h3>河北省超人电脑学校唐山分校 <span class="ver-line">|</span> 唐山分校讲师 <span class="ver-line">|</span> 培训师/讲师 </h3>
-                    <p>
-                    <span> 行业类别：教育/培训/院校 <span class="ver-line">|</span> </span>
-                    <span>企业性质：民营 <span class="ver-line">|</span> </span>
-                    <span> 企业规模：20-99人 <span class="ver-line">|</span> </span>
-                    <span> 职位月薪：1000元/月以下</span>
-                    </p>
-                    <p>
-                    <strong>工作描述：</strong><br>
-                    <div style="text-indent:2em;">
-                    面向非计算机专业人士，将计算机专业术语转化或解释为通俗易懂的语言，主讲两门课程：<br>1.《电脑组装与维护》通过介绍计算机硬件发展史来使学员了解计算机硬件组成，掌握各硬件类型与型号的辨别，熟悉硬件的安装与常规故障的维修，学会分区格式化与安装操作系统，并对操作系统进行简单的配置和应用。<br>2.《Windows办公入门》Windows操作系统的基本使用，Microsoft Office办公软件的使用与技巧。
-                    </div>
-                    </p>
-                    </div>
-                    </dd>
+            <div class="row flush images">
+                <div class="6u">
+                    <a href="http://libook.com.cn/StaticSites/OfficePics/DSC_0707.jpg"
+                       class="image fit from-left">
+                        <img src="#"
+                             delayedsrc="http://libook.com.cn/StaticSites/OfficePics/DSC_0707.jpg"
+                             title="The Anonymous Red" alt=""/>
+                    </a>
+                </div>
+                <div class="6u">
+                    <a href="http://libook.com.cn/StaticSites/OfficePics/DSC_0710.jpg"
+                       class="image fit from-left">
+                        <img src="#"
+                             delayedsrc="http://libook.com.cn/StaticSites/OfficePics/DSC_0710.jpg"
+                             title="The Anonymous Red" alt=""/>
+                    </a>
+                </div>
+            </div>
+            <div class="row flush images">
+                <div class="6u">
+                    <a href="http://libook.com.cn/StaticSites/OfficePics/DSC_0711.jpg"
+                       class="image fit from-left">
+                        <img src="#"
+                             delayedsrc="http://libook.com.cn/StaticSites/OfficePics/DSC_0711.jpg"
+                             title="The Anonymous Red" alt=""/>
+                    </a>
+                </div>
+                <div class="6u">
+                    <a href="http://libook.com.cn/StaticSites/OfficePics/DSC_0715.jpg"
+                       class="image fit from-left">
+                        <img src="#"
+                             delayedsrc="http://libook.com.cn/StaticSites/OfficePics/DSC_0715.jpg"
+                             title="The Anonymous Red" alt=""/>
+                    </a>
+                </div>
+            </div>
+            <div class="row flush images">
+                <div class="6u">
+                    <a href="http://libook.com.cn/StaticSites/OfficePics/DSC_0717.jpg"
+                       class="image fit from-left">
+                        <img src="#"
+                             delayedsrc="http://libook.com.cn/StaticSites/OfficePics/DSC_0717.jpg"
+                             title="The Anonymous Red" alt=""/>
+                    </a>
+                </div>
+                <div class="6u">
+                    <a href="http://libook.com.cn/StaticSites/OfficePics/DSC_0718.jpg"
+                       class="image fit from-left">
+                        <img src="#"
+                             delayedsrc="http://libook.com.cn/StaticSites/OfficePics/DSC_0718.jpg"
+                             title="The Anonymous Red" alt=""/>
+                    </a>
+                </div>
+            </div>
+            <div class="row flush images">
+                <div class="6u">
+                    <a href="http://libook.com.cn/StaticSites/OfficePics/DSC_0720.jpg"
+                       class="image fit from-left">
+                        <img src="#"
+                             delayedsrc="http://libook.com.cn/StaticSites/OfficePics/DSC_0720.jpg"
+                             title="The Anonymous Red" alt=""/>
+                    </a>
+                </div>
+                <div class="6u">
+                    <a href="http://libook.com.cn/StaticSites/OfficePics/DSC_0727.jpg"
+                       class="image fit from-left">
+                        <img src="#"
+                             delayedsrc="http://libook.com.cn/StaticSites/OfficePics/DSC_0727.jpg"
+                             title="The Anonymous Red" alt=""/>
+                    </a>
                 </div>
             </div>
         </div>
-            
-            
-            
-        <div id="str2">
-            <div id="str20">
-                <div style="float:left; margin-left:190px; width:780px; height:550px;">
-                    <dt style="text-indent:-4em;"><h1>项目经验(1/3)</h1></dt>
-                    <div class="project-experience">
-                    <p>2012/12 -- 2013/07</p>
-                    <h3>国家级《基于TML与XYDB的多国语言功能模块化WEBCMS的研究与实现》</h3>
-                    <div>
-                    <p>
-                    <strong>软件环境：</strong>WindowsServer2008、IIS7、TML、Spada拟合开发环境、XYDB
-                    <br>
-                    <strong>硬件环境：</strong>Intel Xeon E5540+4G内存+RAID0
-                    <br>
-                    <strong>开发工具：</strong>Chrome、EditPlus、gedit、Dreamweaver、BCompare
-                    </p>
-                    </div>
-                    <p>
-                    <strong>责任描述：</strong><br>
-                    <div style="text-indent:2em;">
-                    负责CMS的主要架构的设计、前端的开发、系统核心框架的开发、部分功能模块的开发、高效实验室开发方法的设计、团队的协调与管理。
-                    </div>
-                    </p>
-                    <p>
-                    <strong>项目简介：</strong><br>
-                    <div style="text-indent:2em;">
-                    吸取主流CMS优点及相关技术，独创功能模块化框架与多国语言支持，具有高度扩展性、易用性和高效性。国家级科研项目，论文核心A级，并编著图书《思想程序开发系列—用思想做Web开发》。项目后端主要使用了TML（思想模块化语言）与XYDB（坐标系数据库），前端采用最新的jQuery和EasyUI技术。
-                    </div>
-                    </p>
-                    </div>
-                </div>
-            </div>
 
-            <div id="str21">
-                <div style="float:left; margin-left:190px; width:780px; height:550px;">
-                    <dt style="text-indent:-4em;"><h1>项目经验(2/3)</h1></dt>
-                    <div class="project-experience">
-                    <p>2012/05 -- 2012/12</p>
-                    <h3>基于C\S架构的学生社区管理系统</h3>
-                    <div>
-                    <p>
-                    <strong>软件环境：</strong>Windows+.Net4.0+MySQL
-                    <br>
-                    <strong>硬件环境：</strong>主流PC兼容机
-                    <br>
-                    <strong>开发工具：</strong>Microsoft Visual Studio 2010\2012
-                    </p>
-                    </div>
-                    <p>
-                    <strong>责任描述：</strong><br>
-                    <div style="text-indent:2em;">
-                    团队队长，负责架构设计、后端开发以及难题攻破。
-                    </div>
-                    </p>
-                    <p>
-                    <strong>项目简介：</strong><br>
-                    <div style="text-indent:2em;">
-                    本项目是曲阜师范大学日照校区学生社区管理中心委托本校学团开发的系统，目标是便捷和安全，可以管理全校学生住宿数据，且支持Excel导入导出。使用安全性高（AES加密算法）、功能强大、易用的C\S结构进行开发。我接触并学习了C#.NET，对多线程、Socket编程有了深入的理解和认识。
-                    </div>
-                    </p>
-                    </div>
-                </div>
-            </div>
+    </div>
+</section>
 
-            <div id="str22">
-                <div style="float:left; margin-left:190px; width:780px; height:550px;">
-                    <dt style="text-indent:-4em;"><h1>项目经验(3/3)</h1></dt>
-                    <div class="project-experience">
-                    <p>2011/06 -- 2011/09</p>
-                    <h3>基于B\S结构的智慧校园系统</h3>
-                    <div>
-                    <p>
-                    <strong>软件环境：</strong>WAMP(Windows+Apache+MySQL+PHP)
-                    <br>
-                    <strong>硬件环境：</strong>主流PC兼容机
-                    <br>
-                    <strong>开发工具：</strong>Adobe Dreamweaver CS5;PHPMyAdmin
-                    </p>
-                    </div>
-                    <p>
-                    <strong>责任描述：</strong><br>
-                    <div style="text-indent:2em;">
-                    团队队长，负责整体架构设计、后端代码编写、技术难题攻破，分配协调工作。
-                    </div>
-                    </p>
-                    <p>
-                    <strong>项目简介：</strong><br>
-                    <div style="text-indent:2em;">
-                    本项目是齐鲁软件大赛物联网方向参赛项目，是AMP环境下的B\S结构系统，主要功能用于智能地、人性化地、便捷地管理学校内设施，研究校园信息化智能管理的可行性与发展空间，包括教室管理与停车场管理两部分。本项目获三等奖。
-                    </div>
-                    </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-            
-            
-            
-        <div id="str3">
-            <div style="float:left; width:420px; height:550px; border-right:20px solid transparent;padding-left: 4em;border-left:1px solid transparent;">
-                <dt style="text-indent:-4em;"><h1>教育相关</h1></dt>
-                <dt><h3>教育经历</h3></dt>
-                <dd [%%show_edu%%]="">
-                <div class="education-background">
-                <p>2010/09-- 至今</p>
-                <h4>曲阜师范大学杏坛学院 <span class="ver-line">|</span> 计算机科学与技术 <span class="ver-line">|</span> 本科</h4>
-                </div>
-                </dd>
-                <dt><h3>培训经历</h3></dt>
-                <dd>
-                <div class="training">
-                <p>2006/06--2006/08</p>
-                <h4>河北省超人电脑学校唐山分校</h4>
-                <p>
-                </p><div><strong>培训课程：</strong>Visual FoxPro 程序设计<br></div>
-                <div><strong>培训地点：</strong>河北省唐山市丰润区<br></div> 
-                <p></p>
-                </div>
-                </dd>
-            </div>
-            <div id="str0B" style="float:left; width:580px; height:550px;border-right:1px solid transparent; border-left:20px solid transparent; border-top:0px solid #0000FF; border-bottom:0px solid #0000FF;">
-                <dt><h3>在校学习情况</h3></dt>
-                <dd>
-                <p>曲阜师范大学计算机科学学院文艺部副部长;<br>曲阜师范大学日照校区学团网络技术部副部长;<br>河北玉田一中学生会组织部副部长;<br>河北玉田一中学生会宣传部部长</p>
-                </dd>
-                <dd>
-                <div>
-                <h3> 2010/04 班级三好学生 班组级</h3>
-                <h5 style="text-indent:2em;">河北省玉田一中高三23班三好学生</h5>
-                </div>
-                </dd>
-                <dd>
-                <div>
-                <h3> 2011/06 优秀班干部 班组级</h3>
-                <h5 style="text-indent:2em;">院级评奖，优秀班干部，当时任职副班长</h5>
-                </div>
-                </dd>
-                <dd>
-                <div>
-                <h3> 2011/09 齐鲁软件大赛三等奖 省区级</h3>
-                <h5 style="text-indent:2em;">齐鲁软件大赛三等奖，基于B\S结构的智慧校园系统。</h5>
-                </div>
-                </dd>
-                <dt style="display:none"><h5>在校实践经验</h5></dt>
-                <dd style="display:none">
-                </dd>
-            </div>
-        </div>
-            
-        <div id="str4">
-            <div style="float:left; width:420px; height:550px; border-right:20px solid transparent;padding-left: 4em;border-left:1px solid transparent;">
-                <dt style="text-indent:-4em;"><h1 style="text-indent:-2em;">能力评定</h1></dt>
-                <dt><h3>参赛证书</h3></dt>
-                <dd>
-                <div class="certificates">
-                <p>2011/09</p>
-                <h4>齐鲁软件大赛三等奖</h4>
-                <h5 style="text-indent:2em;">齐鲁软件大赛三等奖，济南计算机学会，齐鲁软件园联合颁发。</h5>
-                </div>
-                </dd>
-                <dt><h3>语言能力</h3></dt>
-                <dd>
-                <div class="language-skill">
-                英语 <span>：读写能力良好 <span class="ver-line">|</span> 听说能力熟练</span>
-                </div>
-                </dd>
-            </div>
-            <div id="str0B" style="float:left; width:580px; height:550px;border-right:1px solid transparent; border-left:20px solid transparent; border-top:0px solid #0000FF; border-bottom:0px solid #0000FF;">
-                <dt><h3>专业技能</h3></dt>
-                <dd>
-                <table cellpadding="3px">
-                
-                <tr><td>Linux操作系统</td><td>熟练</td><td>72个月</td></tr>
-                
-                <tr><td>JQuery-EasyUI架构的使用</td><td>熟练</td><td>4个月</td></tr>
-                
-                <tr><td>JAVASE程序设计</td><td>良好</td><td>10个月</td></tr>
-                
-                <tr><td>PHP+Apache+MySQL程序设计</td><td>熟练</td><td>20个月</td></tr>
-                
-                <tr><td>C#.NET程序设计</td><td>熟练</td><td>13个月</td></tr>
-                
-                <tr><td>维修与维护</td><td>精通</td><td>120个月</td></tr>
-                </table>
-                </dd>
-                <dt><h3>获得荣誉</h3></dt>
-                <dd>
-                <p>齐鲁软件大赛三等奖。<br>运动会800米与100米接力冠军。<br>院级演讲比赛三等奖和人气奖。<br>高中英语演讲比赛校级一等奖。<br>高中英语歌曲大赛校级一等奖。</p>
-                </dd>
-            </div>
-        </div>
-        
-        <div id="str5">
-            <div style="float:left; margin-left:190px; width:550px; height:550px;z-index:2;">
-                <dt style="text-indent:-4em;"><h1 style="text-indent:-2em;">其他</h1></dt>
-                <dt><h3>我感兴趣的</h3></dt>
-                <dd>
-                <p>
-                    <img style="width:100px;" src="./李丹阳的简历_files/images/linux.jpg"/>
-                    <img style="width:100px;" src="./李丹阳的简历_files/images/trackandfield.jpg"/>
-                    <img style="width:100px;" src="./李丹阳的简历_files/images/linkinpark.jpg"/>
-                    <img style="width:100px;" src="./李丹阳的简历_files/images/eminem.jpg"/>
-                    <img style="width:100px;" src="./李丹阳的简历_files/images/parkour.jpg"/>
-                    <img style="width:100px;" src="./李丹阳的简历_files/images/music.jpg"/>
-                    <img style="width:100px;" src="./李丹阳的简历_files/images/movie.jpg"/>
-                    <img style="width:100px;" src="./李丹阳的简历_files/images/write.jpg"/></p>
-                </dd>
-                <dt><h3>职业目标</h3></dt>
-                <dd>
-                <p>成为优秀的架构师</p>
-                </dd>
-            </div>
-        </div>
-        
-        
+<!-- Contact -->
+<section id="contact" class="main style3 secondary">
+    <div class="content container">
+        <header>
+            <h2>Say Hello.</h2>
 
-        <div id="str6A">
-            <div style="float:left; margin-top:50px; margin-left:100px; width:780px; height:550px;">
-                <dt style="text-indent:-4em;"><h1 style="text-indent:-2em;">时间轴</h1></dt>
-                <style>
-                    .timelabels{
-                        color: #ffffff;
-                        margin-top: -1px;
-                        left: 0px;
-                        font-size: 30px; 
-                        width: 900px;
-                        height:20px; 
-                        z-index: 2; 
-                        position: relative;
-                        border-top:1px solid gray;
-                        border-left:3px solid gray;
-                        border-bottom:1px solid gray;
-                    }
-                    .timebars{
-                        color: #ffffff;
-                        margin-top: -17px;
-                        left: 0px;
-                        font-size: 30px; 
-                        height:18px; 
-                        z-index: 2; 
-                        position: relative;
-                        background-color:white;
-                    }
-                    .timebarlabels{
-                        font-size:16px;
-                        z-index: 2; 
-                        position: relative;
-                    }
-                    #timebar0{
-                        margin-left:486px;
-                        width:6px;
-                    }
-                    #timebar1{
-                        margin-left:633px;
-                        width:27px;
-                    }
-                    #timebar2{
-                        margin-left:663px;
-                        width:9px;
-                    }
-                    #timebar3{
-                        margin-left:663px;
-                        width:9px;
-                    }
-                    #timebar4{
-                        margin-left:699px;
-                        width:9px;
-                    }
-                    #timebar5{
-                        margin-left:699px;
-                        width:75px;
-                    }
-                    #timebar6{
-                        margin-left:732px;
-                        width:21px;
-                    }
-                    #timebar7{
-                        margin-left:753px;
-                        width:21px;
-                    }
-                    #timebar8{
-                        margin-left:240px;
-                        width:207px;
-                    }
-                    #timebar9{
-                        margin-left:456px;
-                        width:99px;
-                    }
-                    #timebar10{
-                        margin-left:564px;
-                        width:99px;
-                    }
-                    #timebar11{
-                        margin-left:672px;
-                        width:135px;
-                    }
-                </style>
+            <p>Would you like to say something to me?</p>
+        </header>
 
-                <div class="timelabels" style="border:0px;">
-                    <div class="timebarlabels" style="margin-left:0px;color:gray;border-left:3px solid gray;">
-                        1992
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-18px;margin-left:69px;color:gray;border-left:3px solid gray;">
-                        1994
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-18px;margin-left:141px;color:gray;border-left:3px solid gray;">
-                        1996
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-18px;margin-left:213px;color:gray;border-left:3px solid gray;">
-                        1998
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-18px;margin-left:285px;color:gray;border-left:3px solid gray;">
-                        2000
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-18px;margin-left:357px;color:gray;border-left:3px solid gray;">
-                        2002
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-18px;margin-left:429px;color:gray;border-left:3px solid gray;">
-                        2004
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-18px;margin-left:501px;color:gray;border-left:3px solid gray;">
-                        2006
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-18px;margin-left:573px;color:gray;border-left:3px solid gray;">
-                        2008
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-18px;margin-left:645px;color:gray;border-left:3px solid gray;">
-                        2010
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-18px;margin-left:717px;color:gray;border-left:3px solid gray;">
-                        2012
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-18px;margin-left:789px;color:gray;border-left:3px solid gray;">
-                        2014
-                    </div>
-                </div>
-
-                <div id="primary_school" class="timelabels">
-                    <div class="timebarlabels" style="color:#8EE5EE;">
-                        小学
-                    </div>
-                    <div id="timebar8" class="timebars" style="background-color:#8EE5EE;">
-                    </div>
-                </div>
-                <div id="middle_school" class="timelabels">
-                    <div class="timebarlabels" style="color:#8EE5EE;">
-                        初中
-                    </div>
-                    <div id="timebar9" class="timebars" style="background-color:#8EE5EE;">
-                    </div>
-                </div>
-                <div id="vf" class="timelabels">
-                    <div class="timebarlabels">
-                        Visual FoxPro 程序设计
-                    </div>
-                    <div id="timebar0" class="timebars">
-                    </div>
-                </div>
-                <div id="high_school" class="timelabels">
-                    <div class="timebarlabels" style="color:#8EE5EE;">
-                        高中
-                    </div>
-                    <div id="timebar10" class="timebars" style="background-color:#8EE5EE;">
-                    </div>
-                </div>
-                <div id="sport" class="timelabels">
-                    <div class="timebarlabels">
-                        参加体育训练
-                    </div>
-                    <div id="timebar1" class="timebars">
-                    </div>
-                </div>
-                <div id="technical_support" class="timelabels">
-                    <div class="timebarlabels" style="color:yellow;">
-                        售前/售后技术支持工程师
-                    </div>
-                    <div id="timebar2" class="timebars" style="background-color:yellow;">
-                    </div>
-                </div>
-                <div id="teacher" class="timelabels">
-                    <div class="timebarlabels" style="color:yellow;">
-                        培训师/讲师
-                    </div>
-                    <div id="timebar3" class="timebars" style="background-color:yellow;">
-                    </div>
-                </div>
-                <div id="university" class="timelabels">
-                    <div class="timebarlabels" style="color:#8EE5EE;">
-                        大学
-                    </div>
-                    <div id="timebar11" class="timebars" style="background-color:#8EE5EE;">
-                    </div>
-                </div>
-                <div id="smartschool" class="timelabels">
-                    <div class="timebarlabels" style="color:red;">
-                        基于B\S结构的智慧校园系统
-                    </div>
-                    <div id="timebar4" class="timebars" style="background-color:red;">
-                    </div>
-                </div>
-                <div id="administrator" class="timelabels">
-                    <div class="timebarlabels" style="color:yellow;">
-                        副部长兼网络管理员
-                    </div>
-                    <div id="timebar5" class="timebars" style="background-color:yellow;">
-                    </div>
-                </div>
-                <div id="community_management" class="timelabels">
-                    <div class="timebarlabels" style="color:red;">
-                        基于C\S架构的学生社区管理系统
-                    </div>
-                    <div id="timebar6" class="timebars" style="background-color:red;">
-                    </div>
-                </div>
-                <div id="cms" class="timelabels">
-                    <div class="timebarlabels" style="color:red;">
-                        基于TML与XYDB的多国语言功能模块化WEBCMS的研究与实现
-                    </div>
-                    <div id="timebar7" class="timebars" style="background-color:red;">
-                    </div>
-                </div>
-
-                <div class="timelabels" style="border:0px;"></div>
-                <div class="timelabels" style="border:0px;width:300px;margin-left:300px;">
-                    <div class="timebarlabels" style="margin-left:0px;color:#8EE5EE;">
-                        学业
-                    </div>
-                    <div class="timebars" style="width:18px;margin-left:36px;background-color:#8EE5EE;">
-                    </div>
-                    <div class="timebarlabels" style="margin-left:72px;margin-top:-18px;color:yellow;">
-                        工作
-                    </div>
-                    <div class="timebars" style="width:18px;margin-left:108px;margin-top:-18px;background-color:yellow;">
-                    </div>
-                    <div class="timebarlabels" style="margin-left:144px;margin-top:-18px;color:red;">
-                        项目
-                    </div>
-                    <div class="timebars" style="width:18px;margin-left:180px;margin-top:-18px;background-color:red;">
-                    </div>
-                    <div class="timebarlabels" style="margin-left:216px;margin-top:-18px;">
-                        其他
-                    </div>
-                    <div class="timebars" style="width:18px;margin-left:250px;margin-top:-18px;">
-                    </div>
-                </div>
-            </div>
-            <script type="text/javascript">
-                $(document).ready(function(){
-                    $(".timelabels").mouseenter(function(){
-                        $(this).css("background-color","gray");
-                    });
-                    $(".timelabels").mouseleave(function(){
-                        $(this).css("background-color","transparent");
-                    });
-
-                    /*$("#primary_school").click(function(){
-                        nextpage("str3",-1,-1);
-                    });
-                    $("#middle_school").click(function(){
-                        nextpage("str3",-1,-1);
-                    });
-                    $("#high_school").click(function(){
-                        nextpage("str3",-1,-1);
-                    });
-                    $("#university").click(function(){
-                        nextpage("str3",-1,-1);
-                    });
-                    $("#vf").click(function(){
-                        nextpage("str4",-1,-1);
-                    });
-                    $("#sport").click(function(){
-                        nextpage("str0",-1,-1);
-                    });
-                    $("#technical_support").click(function(){
-                        nextpage("str1",1,2);
-                        shownext();
-                    });
-                    $("#teacher").click(function(){
-                        nextpage("str1",2,2);
-                        shownext();
-                    });
-                    $("#administrator").click(function(){
-                        nextpage("str1",0,2);
-                        shownext();
-                    });
-                    $("#smartschool").click(function(){
-                        nextpage("str2",2,2);
-                        shownext();
-                    });
-                    $("#community_management").click(function(){
-                        nextpage("str2",1,2);
-                        shownext();
-                    });
-                    $("#cms").click(function(){
-                        nextpage("str2",0,2);
-                        shownext();
-                    });*/
-                });
-            </script>
-        </div>
-        <div id="str6B">
-            <div style="float:left; margin-top:50px; margin-left:100px; width:780px; height:550px;">
-                <dt style="text-indent:-4em;"><h1 style="text-indent:-2em;">时间轴</h1></dt>
-                <style>
-                    .timelabels{
-                        color: #ffffff;
-                        margin-top: -1px;
-                        left: 0px;
-                        font-size: 30px; 
-                        width: 900px;
-                        height:20px; 
-                        z-index: 2; 
-                        position: relative;
-                        border-top:1px solid gray;
-                        border-left:3px solid gray;
-                        border-bottom:1px solid gray;
-                    }
-                    .timebars{
-                        color: #ffffff;
-                        margin-top: -20px;
-                        left: 0px;
-                        font-size: 30px; 
-                        height:20px; 
-                        z-index: 2; 
-                        position: relative;
-                        background-color:white;
-                    }
-                    .timebarlabels{
-                        font-size:16px;
-                        z-index: 2; 
-                        position: relative;
-                    }
-                    #timebar0{
-                        margin-left:486px;
-                        width:6px;
-                    }
-                    #timebar1{
-                        margin-left:633px;
-                        width:27px;
-                    }
-                    #timebar2{
-                        margin-left:663px;
-                        width:9px;
-                    }
-                    #timebar3{
-                        margin-left:663px;
-                        width:9px;
-                    }
-                    #timebar4{
-                        margin-left:699px;
-                        width:9px;
-                    }
-                    #timebar5{
-                        margin-left:699px;
-                        width:75px;
-                    }
-                    #timebar6{
-                        margin-left:732px;
-                        width:21px;
-                    }
-                    #timebar7{
-                        margin-left:753px;
-                        width:21px;
-                    }
-                    #timebar8{
-                        margin-left:240px;
-                        width:207px;
-                    }
-                    #timebar9{
-                        margin-left:456px;
-                        width:99px;
-                    }
-                    #timebar10{
-                        margin-left:564px;
-                        width:99px;
-                    }
-                    #timebar11{
-                        margin-left:672px;
-                        width:135px;
-                    }
-                </style>
-
-                <div class="timelabels" style="border:0px;">
-                    <div class="timebarlabels" style="margin-left:0px;color:gray;border-left:3px solid gray;">
-                        1992
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-20px;margin-left:69px;color:gray;border-left:3px solid gray;">
-                        1994
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-20px;margin-left:141px;color:gray;border-left:3px solid gray;">
-                        1996
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-20px;margin-left:213px;color:gray;border-left:3px solid gray;">
-                        1998
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-20px;margin-left:285px;color:gray;border-left:3px solid gray;">
-                        2000
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-20px;margin-left:357px;color:gray;border-left:3px solid gray;">
-                        2002
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-20px;margin-left:429px;color:gray;border-left:3px solid gray;">
-                        2004
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-20px;margin-left:501px;color:gray;border-left:3px solid gray;">
-                        2006
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-20px;margin-left:573px;color:gray;border-left:3px solid gray;">
-                        2008
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-20px;margin-left:645px;color:gray;border-left:3px solid gray;">
-                        2010
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-20px;margin-left:717px;color:gray;border-left:3px solid gray;">
-                        2012
-                    </div>
-                    <div class="timebarlabels" style="margin-top:-20px;margin-left:789px;color:gray;border-left:3px solid gray;">
-                        2014
-                    </div>
-                </div>
-
-                <div id="primary_school" class="timelabels">
-                    <div class="timebarlabels" style="color:#8EE5EE;">
-                        小学
-                    </div>
-                    <div id="timebar8" class="timebars" style="background-color:#8EE5EE;">
-                    </div>
-                </div>
-                <div id="middle_school" class="timelabels">
-                    <div class="timebarlabels" style="color:#8EE5EE;">
-                        初中
-                    </div>
-                    <div id="timebar9" class="timebars" style="background-color:#8EE5EE;">
-                    </div>
-                </div>
-                <div id="vf" class="timelabels">
-                    <div class="timebarlabels">
-                        Visual FoxPro 程序设计
-                    </div>
-                    <div id="timebar0" class="timebars">
-                    </div>
-                </div>
-                <div id="high_school" class="timelabels">
-                    <div class="timebarlabels" style="color:#8EE5EE;">
-                        高中
-                    </div>
-                    <div id="timebar10" class="timebars" style="background-color:#8EE5EE;">
-                    </div>
-                </div>
-                <div id="sport" class="timelabels">
-                    <div class="timebarlabels">
-                        参加体育训练
-                    </div>
-                    <div id="timebar1" class="timebars">
-                    </div>
-                </div>
-                <div id="technical_support" class="timelabels">
-                    <div class="timebarlabels" style="color:yellow;">
-                        售前/售后技术支持工程师
-                    </div>
-                    <div id="timebar2" class="timebars" style="background-color:yellow;">
-                    </div>
-                </div>
-                <div id="teacher" class="timelabels">
-                    <div class="timebarlabels" style="color:yellow;">
-                        培训师/讲师
-                    </div>
-                    <div id="timebar3" class="timebars" style="background-color:yellow;">
-                    </div>
-                </div>
-                <div id="university" class="timelabels">
-                    <div class="timebarlabels" style="color:#8EE5EE;">
-                        大学
-                    </div>
-                    <div id="timebar11" class="timebars" style="background-color:#8EE5EE;">
-                    </div>
-                </div>
-                <div id="smartschool" class="timelabels">
-                    <div class="timebarlabels" style="color:red;">
-                        基于B\S结构的智慧校园系统
-                    </div>
-                    <div id="timebar4" class="timebars" style="background-color:red;">
-                    </div>
-                </div>
-                <div id="administrator" class="timelabels">
-                    <div class="timebarlabels" style="color:yellow;">
-                        副部长兼网络管理员
-                    </div>
-                    <div id="timebar5" class="timebars" style="background-color:yellow;">
-                    </div>
-                </div>
-                <div id="community_management" class="timelabels">
-                    <div class="timebarlabels" style="color:red;">
-                        基于C\S架构的学生社区管理系统
-                    </div>
-                    <div id="timebar6" class="timebars" style="background-color:red;">
-                    </div>
-                </div>
-                <div id="cms" class="timelabels">
-                    <div class="timebarlabels" style="color:red;">
-                        基于TML与XYDB的多国语言功能模块化WEBCMS的研究与实现
-                    </div>
-                    <div id="timebar7" class="timebars" style="background-color:red;">
-                    </div>
-                </div>
-
-                <div class="timelabels" style="border:0px;"></div>
-                <div class="timelabels" style="border:0px;width:300px;margin-left:300px;">
-                    <div class="timebarlabels" style="margin-left:0px;color:#8EE5EE;">
-                        学业
-                    </div>
-                    <div class="timebars" style="width:18px;margin-left:36px;background-color:#8EE5EE;">
-                    </div>
-                    <div class="timebarlabels" style="margin-left:72px;margin-top:-20px;color:yellow;">
-                        工作
-                    </div>
-                    <div class="timebars" style="width:18px;margin-left:108px;margin-top:-20px;background-color:yellow;">
-                    </div>
-                    <div class="timebarlabels" style="margin-left:144px;margin-top:-20px;color:red;">
-                        项目
-                    </div>
-                    <div class="timebars" style="width:18px;margin-left:180px;margin-top:-20px;background-color:red;">
-                    </div>
-                    <div class="timebarlabels" style="margin-left:216px;margin-top:-20px;">
-                        其他
-                    </div>
-                    <div class="timebars" style="width:18px;margin-left:250px;margin-top:-20px;">
-                    </div>
-                </div>
-            </div>
-            <script type="text/javascript">
-                $(document).ready(function(){
-                    $(".timelabels").mouseenter(function(){
-                        $(this).css("background-color","gray");
-                    });
-                    $(".timelabels").mouseleave(function(){
-                        $(this).css("background-color","transparent");
-                    });
-
-                    /*$("#primary_school").click(function(){
-                        nextpage("str3",-1,-1);
-                    });
-                    $("#middle_school").click(function(){
-                        nextpage("str3",-1,-1);
-                    });
-                    $("#high_school").click(function(){
-                        nextpage("str3",-1,-1);
-                    });
-                    $("#university").click(function(){
-                        nextpage("str3",-1,-1);
-                    });
-                    $("#vf").click(function(){
-                        nextpage("str4",-1,-1);
-                    });
-                    $("#sport").click(function(){
-                        nextpage("str0",-1,-1);
-                    });
-                    $("#technical_support").click(function(){
-                        nextpage("str1",1,2);
-                        shownext();
-                    });
-                    $("#teacher").click(function(){
-                        nextpage("str1",2,2);
-                        shownext();
-                    });
-                    $("#administrator").click(function(){
-                        nextpage("str1",0,2);
-                        shownext();
-                    });
-                    $("#smartschool").click(function(){
-                        nextpage("str2",2,2);
-                        shownext();
-                    });
-                    $("#community_management").click(function(){
-                        nextpage("str2",1,2);
-                        shownext();
-                    });
-                    $("#cms").click(function(){
-                        nextpage("str2",0,2);
-                        shownext();
-                    });*/
-                });
-            </script>
-        </div>
+        <div id="disqus_thread"></div>
         <script type="text/javascript">
-            $(document).ready(function(){
-                if (window.navigator.userAgent.indexOf("Firefox")>=1){
-                    $("#str6A").remove();
-                    $("#str6B").attr("id","str6");
-                }
-                else{
-                    $("#str6B").remove();
-                    $("#str6A").attr("id","str6");
-                }
-            });
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'libook'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            setTimeout(function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            }, 1000);
         </script>
-        
-        
-        
-        <div id="str7">
-            <div id="MBTI" style="float:left; margin-left:190px;margin-top:50px; width:780px; height:550px;">
-                <script type="text/javascript">
-                    function createHexRandom(){ 
-                        var num = ''; 
-                        for (i = 0; i <= 5; i++) {
-                            var tmp = Math.ceil(Math.random()*15); 
-                            if(tmp > 9){ 
-                                switch(tmp){ 
-                                    case(10): 
-                                        num+='a'; 
-                                        break; 
-                                    case(11): 
-                                        num+='b'; 
-                                        break; 
-                                    case(12): 
-                                        num+='c'; 
-                                        break; 
-                                    case(13): 
-                                        num+='d'; 
-                                        break; 
-                                    case(14): 
-                                        num+='e'; 
-                                        break; 
-                                    case(15): 
-                                        num+='f'; 
-                                        break; 
-                                } 
-                            } 
-                            else{ 
-                                num+=tmp; 
-                            } 
-                        } 
-                        return num; 
-                    }
-                    $(document).ready(function(){
-                        $(".bar").mouseover(function(){
-                            $(".bar").css("background","#"+createHexRandom())
-                        });
-                    });
-                </script>
-                <style>
-                    #MBTI .graph {
-                        position: relative;
-                     /* IE is dumb */
-                        width: 250px;
-                        border: 1px solid #B1D632;
-                        padding: 2px;
-                        margin-bottom: .5em;
-                    }
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
 
-                    #MBTI .graph2 {
-                        position: relative;
-                     /* IE is dumb */
-                        width: 250px;
-                        border: 1px solid #B1D632;
-                        padding: 2px;
-                        margin-bottom: .5em;
-                    }
+        <!--<div class="box container small">-->
 
-                    #MBTI .graph .bar {
-                        display: block;
-                        position: relative;
-                        background: #B1D632;
-                        text-align: right;
-                        color: #333;
-                        height: 2em;
-                        line-height: 2em;
-                        float: left
-                    }
+            <!--&lt;!&ndash;Contact Form &ndash;&gt;-->
+            <!--<form method="post" action="#">-->
+                <!--<div class="row half">-->
+                    <!--<div class="6u"><input type="text" name="name" placeholder="Name"/></div>-->
+                    <!--<div class="6u"><input type="email" name="email" placeholder="Email"/></div>-->
+                <!--</div>-->
+                <!--<div class="row half">-->
+                    <!--<div class="12u"><textarea name="message" placeholder="Message" rows="6"></textarea></div>-->
+                <!--</div>-->
+                <!--<div class="row">-->
+                    <!--<div class="12u">-->
+                        <!--<ul class="actions">-->
+                            <!--<li><input type="submit" value="Send Message"/></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</form>-->
 
-                    #MBTI .graph2 .bar {
-                        display: block;
-                        position: relative;
-                        background: #B1D632;
-                        text-align: left;
-                        color: #333;
-                        height: 2em;
-                        line-height: 2em;
-                        float: right
-                    }
-
-                    #MBTI .graph .bar span {
-                        position: relative;
-                        font-size: 12px
-                    }
-
-                    #MBTI .graph2 .bar span {
-                        position: relative;
-                        font-size: 12px
-                    }
-                    #MBTI dl { 
-                        margin: 0; 
-                        padding: 0;                     
-                    }
-                    #MBTI dt { 
-                        position: relative; /* IE is dumb */
-                        clear: both;
-                        display: block; 
-                        float: left; 
-                        width: 104px; 
-                        height: 20px; 
-                        line-height: 20px;
-                        margin-right: 17px;              
-                        font-size: .75em; 
-                        text-align: right; 
-                    }
-                    #one,#two{
-                        margin:2px;
-                        padding:2px;
-                        float:left;
-                        line-height:22px;
-                    }
-                </style>
-                <table width="774" border="0">
-                    <tbody>
-                        <tr>
-                            <td width="103">
-                            </td>
-                            <td width="542">
-                                <div align="center">
-                                    <h1>MBTI倾向示意图</h1>
-                                    (类型：ENTJ&nbsp;总倾向：48.6)
-                                </div>
-                            </td>
-                            <td width="115">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                外向（E）
-                            </td>
-                            <td>
-                                <div class="graph2" id="one">
-                                    <strong class="bar" style="width: 50.00%;"><span></span></strong>
-                                </div>
-                                <div class="graph" id="two">
-                                    <strong class="bar" style="width: 0;"><span></span></strong>
-                                </div>
-                                <br>
-                                <br>
-                            </td>
-                            <td>
-                                （I）内向
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                实感（S）
-                            </td>
-                            <td>
-                                <div class="graph2" id="one">
-                                    <strong class="bar" style="width: 0;"><span></span></strong>
-                                </div>
-                                <div class="graph" id="two">
-                                    <strong class="bar" style="width: 60.00%;"><span></span></strong>
-                                </div>
-                                <br>
-                                <br>
-                            </td>
-                            <td>
-                                （N）直觉
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                思考（T）
-                            </td>
-                            <td>
-                                <div class="graph2" id="one">
-                                    <strong class="bar" style="width: 47.83%;"><span></span></strong>
-                                </div>
-                                <div class="graph" id="two">
-                                    <strong class="bar" style="width: 0;"><span></span></strong>
-                                </div>
-                                <br>
-                                <br>
-                            </td>
-                            <td>
-                                （F）情感
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                判断（J）
-                            </td>
-                            <td>
-                                <div class="graph2" id="one">
-                                    <strong class="bar" style="width: 20.00%;"><span></span></strong>
-                                </div>
-                                <div class="graph" id="two">
-                                    <strong class="bar" style="width: 0;"><span></span></strong>
-                                </div>
-                                <br>
-                                <br>
-                            </td>
-                            <td>
-                                （P）知觉
-                            </td>
-                        </tr>
-                        <tr>
-                            <td height="34">
-                            </td>
-                            <td style="background:url(http://www.apesk.com/lee/images/dibiao1.jpg) no-repeat">
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div style="background-color:black;position:relative;margin-left:240px;width:250px;height:40px;text-align:center;">
-                    <a href="./李丹阳的简历_files/resources/职业测评/MBTI1pro.html" target="_blank" style="text-decoration: NONE;color:#ffffff;"><h2>查看详细分析报告</h2></a>
-                </div>
-            </div>
-        </div>
-        
-        
-        
-        <div id="str8">
-            <div style="float:left; width:420px; height:550px; border-right:20px solid transparent;padding-left: 4em;border-left:1px solid transparent;">
-                <dt style="text-indent:-4em;"><h1 id="about">关于</h1></dt>
-                <div id="q0"><h3>这个简历是李丹阳自己做的还是Down的？</h3></div>
-                <div id="q1"><h3>这个简历怎么看效果最好？</h3></div>
-                <div id="q2"><h3>使用这个简历的源代码需要注意什么？</h3></div>
-                <div id="q3"><h3>想询问更多？</h3></div>
-            </div>
-            <div id="str0B" style="float:left; width:580px; height:550px;border-right:1px solid transparent; border-left:20px solid transparent; border-top:0px solid #0000FF; border-bottom:0px solid #0000FF;">
-                <img id="android" src="./李丹阳的简历_files/images/android.png" style="position:relative;margin-left:90px;margin-top:-90px;height:750px;"/>
-                <div style="background-color:black;position:relative;margin-top:-490px;margin-left:223px;height:300px;width:370px;border:3px solid #00FF00;color:#00FF00;font-weight:normal;overflow:hidden;">
-                    <div id="cursor" style="position:relative;margin-top:276px;">
-                        root@LiBook:/# |
-                    </div>
-                    <div id="terminal" style="position:relative;margin-top:-295px;">
-                    </div>
-                    <script type="text/javascript">
-                        cursorflash = setInterval("cursor_flash()", 500);
-                        cursor_shown=true;
-                        function cursor_flash()
-                        {
-                            if(cursor_shown)
-                            {
-                                $("#cursor").text("root@LiBook:/# ");
-                                cursor_shown=false;
-                            }
-                            else
-                            {
-                                $("#cursor").text("root@LiBook:/# |");
-                                cursor_shown=true;
-                            }
-                        }
-                        $(document).ready(function(){
-                            function setterminal(str)
-                            {
-                                if(str=="")
-                                {$("#terminal").text("您好！李丹阳叫我来为您解答问题*∩_∩*把鼠标指针放在有疑问的地方，我就明白您要问什么了！");}
-                                else
-                                {
-                                    $("#terminal").text(str);
-                                }
-                            }
-                            setterminal("");
-                            $("#nextbtn").mouseenter(function(){
-                                setterminal("翻页键，点击翻到下一页，不过不是所有的地方都能翻页哦～～");
-                            });
-                            $("#nextbtn").mouseleave(function(){
-                                setterminal("");
-                            });
-                            $("#backbtn").mouseenter(function(){
-                                setterminal("返回键，点击返回到上一个浏览的页面，可以记录所有访问过的页面哦～～（这个是功能最强的了。。。）");
-                            });
-                            $("#backbtn").mouseleave(function(){
-                                setterminal("");
-                            });
-                            $("#mainbtn").mouseenter(function(){
-                                setterminal("主页键，点击返回到主页，空空如也的主页。。。");
-                            });
-                            $("#mainbtn").mouseleave(function(){
-                                setterminal("");
-                            });
-                            $("#status_notification").mouseenter(function(){
-                                setterminal("状态栏，点击打开菜单，要想隐藏打开的菜单只需要再点击状态栏一次，或者点击除了菜单的其他地方。方便吧，o(∩∩)o...哈哈");
-                            });
-                            $("#status_notification").mouseleave(function(){
-                                setterminal("");
-                            });
-                            $("#subtitle").mouseenter(function(){
-                                setterminal("通知栏，目前只有一个通知，我看看哈。。。。。。是“点击访问 李丹阳 的主页，点点看吧！");
-                            });
-                            $("#subtitle").mouseleave(function(){
-                                setterminal("");
-                            });
-                            $("#q0").mouseenter(function(){
-                                setterminal("当然是李丹阳自己做的啦！100%纯手工哦，在Debian7.1 gedit Chrome的环境下花了整整三天。累死啦！不过很好玩，不是吗？");
-                            });
-                            $("#q0").mouseleave(function(){
-                                setterminal("");
-                            });
-                            $("#q1").mouseenter(function(){
-                                setterminal("建议在1366x768的分辨率下无缩放阅读（什么？如何才能无缩放？现在按一下Ctrl+0就好了），而且一定要用支持HTML5和CSS3的浏览器哦～～推荐Chrome和Firefox，版本越新越好！。。。（话说Firfox有个社区版叫Iceweasel）。。。");
-                            });
-                            $("#q1").mouseleave(function(){
-                                setterminal("");
-                            });
-                            $("#fingerclick0").mouseenter(function(){
-                                setterminal(unescape('%u606D%u559C%u4F60%uFF01%u53D1%u73B0%u5F69%u86CB%u4E4B%u4E00%uFF01%u563F%u563F%uFF0C%u544A%u8BC9%u4F60%u4E2A%u79D8%u5BC6%u5427%uFF0C%u674E%u4E39%u9633%u4E0A%u5927%u5B66%u7684%u65F6%u5019%u6709%u6574%u6574%u4E24%u5E74%u7684%u65F6%u95F4%u4E0A%u7F51%u4E0D%u4EA4%u7F51%u8D39%uFF0C%u56E0%u4E3A%u4E2D%u56FD%u79FB%u52A8%u7684WLAN%u7F51%u7EDC%u6F0F%u6D1E%u767E%u51FA%uFF0C%u6BCF%u6B21%u90FD%u80FD%u7528%u4E00%u4E9B%u5C0F%u4F0E%u4FE9%u62FF%u5230%u4E0A%u7F51%u5E10%u53F7%u3002%u76EE%u524D%u5B58%u5728%u7684%u6F0F%u6D1E%u662F%uFF0C%u7531%u4E8E%u8BBE%u5907%u7ED1%u5B9A%u529F%u80FD%u53EA%u9A8C%u8BC1MAC%u5730%u5740%uFF0C%u6240%u4EE5%u8FDB%u884CMAC%u6B3A%u9A97%u5C31%u80FD%u7ED5%u8FC7%u9A8C%u8BC1%uFF01%u674E%u4E39%u9633%u53D1%u73B0%u7684%u54E6%uFF0C%u5389%u5BB3%u5427%uFF01'));
-                            });
-                            $("#fingerclick0").mouseleave(function(){
-                                setterminal("");
-                            });
-                            $("#fingerclick1").mouseenter(function(){
-                                setterminal(unescape('%u606D%u559C%u4F60%uFF01%u53D1%u73B0%u5F69%u86CB%u4E4B%u4E8C%uFF01%u600E%u4E48%u529E%u5230%u7684%uFF1F%u543C%u543C%uFF0C%u544A%u8BC9%u4F60%u4E2A%u79D8%u5BC6%u5427%uFF0C%u674E%u4E39%u96332011%u5E74%u5143%u65E6%u7684%u65F6%u5019%u559D%u8FC7%u4E24%u65A4%u767D%u9152%uFF0C%u7531%u4E8E%u559D%u7684%u592A%u591A%uFF0C%u548C%u4ED6%u4E00%u8D77%u559D%u9152%u7684%u4E00%u4E2A%u540C%u5B66%u9152%u7CBE%u4E2D%u6BD2%u88AB%u9001%u8FDB%u533B%u9662%u62A2%u6551%uFF0C%u674E%u4E39%u9633%u4ED6%u81EA%u5DF1%u7B2C%u4E8C%u5929%u5455%u5410%u4E86%u4E00%u6574%u5929%uFF0C%u51FA%u73B0%u4E86%u95FB%u5230%u9152%u7CBE%u7684%u5E7B%u89C9%uFF0C%u4ECE%u6B64%u674E%u4E39%u9633%u518D%u4E5F%u4E0D%u559C%u6B22%u559D%u767D%u9152%u4E86%u3002%u3002%u3002%u6240%u4EE5%u8BF4%u561B%uFF0C%u996E%u9152%u8981%u9002%u5EA6%uFF5E%uFF5E'));
-                            });
-                            $("#fingerclick1").mouseleave(function(){
-                                setterminal("");
-                            });
-                            $("#android").mouseenter(function(){
-                                setterminal("这。。。这是我。。。痒死了呃，不要乱摸！");
-                            });
-                            $("#android").mouseleave(function(){
-                                setterminal("");
-                            });
-                            $("#about").mouseenter(function(){
-                                setterminal("仔细找找，可能会有彩蛋哦～～～忘记是一个还是两个了。。。");
-                            });
-                            $("#about").mouseleave(function(){
-                                setterminal("");
-                            });
-                            $("#q2").mouseenter(function(){
-                                setterminal("Good question!“./index.html”和“./李丹阳的简历_files/js/javascript.js”由李丹阳授权 Apache License, Version 2.0 。而且“./李丹阳的简历_files/images/”目录下的me.jpg和me_big.jpg仅允许用于本简历。呵呵，不要紧张嘛！");
-                            });
-                            $("#q2").mouseleave(function(){
-                                setterminal("");
-                            });
-                            $("#q3").mouseenter(function(){
-                                setterminal("请给李丹阳发E-mail:libook7@qq.com或者拨打电话:18863354336。什么？打不通？要说暗号的，暗号是：“你被录用了！”");
-                            });
-                            $("#q3").mouseleave(function(){
-                                setterminal("");
-                            });
-                        });
-                    </script>
-                </div>
-            </div>
-        </div>
+        <!--</div>-->
     </div>
-<!--源end-->
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+
+    <!-- Icons -->
+    <ul class="actions">
+        <li>
+            <a target="_blank" href="https://twitter.com/LiBook7" class="icon fa-twitter">
+                <span class="label">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="https://www.facebook.com/libook7" class="icon fa-facebook">
+                <span class="label">Facebook</span>
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="https://plus.google.com/+李丹阳" class="icon fa-google-plus">
+                <span class="label">Google+</span>
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="http://libook.com.cn/StaticSites/wechat.jpg" class="icon fa-wechat">
+                <span class="label">WeChat</span></a>
+        </li>
+        <li>
+            <a target="_blank" href="http://www.renren.com/libook7" class="icon fa-renren">
+                <span class="label">Renren</span></a>
+        </li>
+        <li>
+            <a target="_blank" href="http://125198688.qzone.qq.com/" class="icon fa-qq">
+                <span class="label">QQ</span></a>
+        </li>
+        <li>
+            <a target="_blank" href="https://github.com/libook" class="icon fa-github">
+                <span class="label">GitHub</span>
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="https://trello.com/libook" class="icon fa-trello">
+                <span class="label">Trello</span>
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="http://stackoverflow.com/users/3871864/libook" class="icon fa-stack-overflow">
+                <span class="label">Stack Overflow</span>
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="http://steamcommunity.com/id/libook/" class="icon fa-steam">
+                <span class="label">Steam</span>
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="http://www.twitch.tv/libook7/profile" class="icon fa-twitch">
+                <span class="label">Twitch</span>
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="https://www.youtube.com/user/libook7" class="icon fa-youtube">
+                <span class="label">Youtube</span>
+            </a>
+        </li>
+    </ul>
+
+    <!-- Menu -->
+    <ul class="menu">
+        <li><a href="mailto:libook7@qq.com?subject=Hi, LiBook!&amp;body=I just visited your homepage." target="_blank">WHO</a>
+            ™ CARE
+        </li>
+        <li><a href="http://libook.com.cn" target="_blank">Leaves Bookshelf</a></li>
+    </ul>
+
+</footer>
+
+<!--Js libs.-->
+<!--[if lte IE 8]>
+<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<![endif]-->
+<!--<script src="resources/js/jquery.min.js"></script>-->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="resources/js/jquery.poptrox.min.js"></script>
+<script src="resources/js/jquery.scrolly.min.js"></script>
+<script src="resources/js/jquery.scrollgress.min.js"></script>
+<script src="resources/js/skel.min.js"></script>
+
+<!--Js actions.-->
+<script src="resources/js/init.js"></script>
+
 </body>
 </html>
