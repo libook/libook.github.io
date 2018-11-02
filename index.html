@@ -139,7 +139,7 @@
     document.getElementById('keywords').addEventListener('keypress',(event)=>{
       if(event.key==='Enter'){
         const keywords=document.getElementById('keywords').value;
-        if(/^[\x00-\xff]+$/.test(keywords)){
+        if(!/\p{Script=Han}/u.test(keywords)) {
           search('google');
         }else{
           search('baidu');
