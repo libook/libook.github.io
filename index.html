@@ -1,0 +1,154 @@
+<html>
+<head>
+  <title>My index</title>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/resources/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/resources/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/resources/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/resources/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/resources/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/resources/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/resources/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/resources/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/resources/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/resources/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/resources/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/resources/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport">
+
+  <style>
+    *{
+      /*font-size: 4mm;*/
+      color: antiquewhite;
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+    }
+    a{
+      text-decoration: none;
+    }
+    input{
+      border: none;
+      outline: none;
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      background-color: dimgrey;
+    }
+    #search{
+      display: flex;
+      flex-direction: row;
+      padding: 0.5em 0.5em 0.5em 0.5em;
+      background-color: grey;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.6em;
+    }
+    #keywords-frame{
+      border-radius: 1.2em;
+      flex-grow: 1;
+      background-color: dimgrey;
+      height: 2.4em;
+      margin-right: 0.5em;
+      padding-left: 1.2em;
+      padding-right: 1.2em;
+    }
+    #keywords{
+      background-color: dimgrey;
+      height: 100%;
+      width: 100%;
+    }
+    #keywords::-webkit-search-cancel-button {   /* select all "X" buttons in search inputs */
+    }
+    #search .button{
+      background-color: grey;
+      border: none;
+      text-align: center;
+      cursor: pointer;
+      /*transform: scale(1, 1.8);*/
+    }
+    #search .spliter{
+      margin-left: 0.1em;
+      margin-right: 0.1em;
+      /*transform: scale(1, 1.8);*/
+    }
+    .list{
+      padding: 0 0 0 0;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    .list *{
+      font-size: 1em;
+      background-color: gray;
+      margin: 0 0 0.6em 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6em 0.6em 0.6em 0.6em;
+    }
+  </style>
+  <script>
+    // Search
+    function search(engine){
+      const engineMap={
+        "baidu":{
+          "searchURL":"https://www.baidu.com/s?wd=",
+        },
+        "google":{
+          "searchURL":"https://www.google.com/search?q=",
+        },
+      };
+      const keywords=document.getElementById('keywords').value;
+      window.open(engineMap[engine].searchURL+encodeURIComponent(keywords));
+    }
+  </script>
+  <script>
+    //AQI
+    function printAQI(dataOfAQI){
+      const theAQIDOM=document.getElementById('aqi');
+      theAQIDOM.innerHTML='Beijing\'s AQI is: '+dataOfAQI.data.aqi;
+      theAQIDOM.parentNode.classList.remove("hide");
+    }
+  </script>
+</head>
+<body>
+  <div id="search">
+    <div id="keywords-frame">
+      <input id="keywords" type="search" placeholder="Baidu's search box is sucks!" autofocus />
+    </div>
+    <span class="button" onclick="search('google')">Google</span>
+    <span class="spliter">|</span>
+    <span class="button" onclick="search('baidu')">Baidu</span>
+  </div>
+  <div class="list">
+    <span id="aqi">Loading Beijing's AQI...</span>
+  </div>
+  <div id="links" class="list">
+    <a href="./Chromium_Runner_Game-master/offline.html">Chrome Runner Game</a>
+    <a href="./share">Things to share</a>
+  </div>
+
+  <script>
+    //Enter to search
+    document.getElementById('keywords').addEventListener('keypress',(event)=>{
+      if(event.key==='Enter'){
+        const keywords=document.getElementById('keywords').value;
+        if(/^[\x00-\xff]+$/.test(keywords)){
+          search('google');
+        }else{
+          search('baidu');
+        }
+      }
+    });
+  </script>
+
+  <script src="https://api.waqi.info/feed/@1451/?token=2475d6e66453a3dc020f3d269b37958166df14d8&callback=printAQI"></script>
+</body>
+</html>
+
