@@ -60,7 +60,7 @@
       metaThemeColor.setAttribute("content", mainColorString);
       const style=`
 *{
-  /*font-size: 4mm;*/
+  font-size: 1.005em;
   color: white;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
@@ -94,7 +94,7 @@ body{
   height: 100%;
   width: 100%;
 }
-#keywords::-webkit-search-cancel-button {   /* select all "X" buttons in search inputs */
+#input[type="search"]::-webkit-search-cancel-button {   /* select all "X" buttons in search inputs */
 }
 #search .button{
   background-color: ${mainColorString};
@@ -136,7 +136,7 @@ body{
   <div class="list">
     <div id="search">
       <div id="keywords-frame">
-        <input id="keywords" type="search" placeholder="Baidu's search box is sucks!" autofocus />
+        <input id="keywords" type="search" placeholder="Baidu is sucks!" autofocus />
       </div>
       <span class="button" onclick="search('google')">Google</span>
       <span class="spliter">|</span>
