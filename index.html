@@ -21,78 +21,7 @@
   <meta name="theme-color" content="dimgrey">
   <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport">
 
-  <style>
-    *{
-      /*font-size: 4mm;*/
-      color: antiquewhite;
-      margin: 0 0 0 0;
-      padding: 0 0 0 0;
-    }
-    a{
-      text-decoration: none;
-    }
-    input{
-      border: none;
-      outline: none;
-    }
-    body{
-      display: flex;
-      flex-direction: column;
-      background-color: dimgrey;
-    }
-    #search{
-      display: flex;
-      flex-direction: row;
-      padding: 0.5em 0.5em 0.5em 0.5em;
-      background-color: grey;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.6em;
-    }
-    #keywords-frame{
-      border-radius: 1.2em;
-      flex-grow: 1;
-      background-color: dimgrey;
-      height: 2.4em;
-      margin-right: 0.5em;
-      padding-left: 1.2em;
-      padding-right: 1.2em;
-    }
-    #keywords{
-      background-color: dimgrey;
-      height: 100%;
-      width: 100%;
-    }
-    #keywords::-webkit-search-cancel-button {   /* select all "X" buttons in search inputs */
-    }
-    #search .button{
-      background-color: grey;
-      border: none;
-      text-align: center;
-      cursor: pointer;
-      /*transform: scale(1, 1.8);*/
-    }
-    #search .spliter{
-      margin-left: 0.1em;
-      margin-right: 0.1em;
-      /*transform: scale(1, 1.8);*/
-    }
-    .list{
-      padding: 0 0 0 0;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-    }
-    .list *{
-      font-size: 1em;
-      background-color: gray;
-      margin: 0 0 0.6em 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.6em 0.6em 0.6em 0.6em;
-    }
-  </style>
+  <style></style>
   <script>
     // Search
     function search(engine){
@@ -115,6 +44,96 @@
       theAQIDOM.innerHTML='Beijing\'s AQI is: '+dataOfAQI.data.aqi;
       theAQIDOM.parentNode.classList.remove("hide");
     }
+  </script>
+  <script>
+    //Theme color
+    const changeColor = () => {
+      const now = new Date();
+      const huePerSecond = 360 / (24 * 60 * 60);
+      const secondsThisDay = now.getHours() * 60 * 60 + now.getMinutes() * 60 + now.getSeconds();
+      const hueThisSecond = huePerSecond * secondsThisDay;
+      const hueThisSecondRollToBlue = (hueThisSecond + 240) % 360;
+      const mainColorString = `hsl(${hueThisSecondRollToBlue}, 25%, 35%)`;
+      const lightColorString = `hsl(${hueThisSecondRollToBlue}, 25%, 45%)`;
+      const darkColorString = `hsl(${hueThisSecondRollToBlue}, 25%, 25%)`;
+      const metaThemeColor = document.querySelector("meta[name=theme-color]");
+      metaThemeColor.setAttribute("content", mainColorString);
+      const style=`
+*{
+  /*font-size: 4mm;*/
+  color: white;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+a{
+  text-decoration: none;
+}
+input{
+  border: none;
+  outline: none;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: ${darkColorString};
+}
+#search{
+  display: flex;
+  flex-direction: row;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  background-color: ${mainColorString};
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.6em;
+}
+#keywords-frame{
+  border-radius: 1.2em;
+  flex-grow: 1;
+  background-color: ${lightColorString};
+  height: 2.4em;
+  margin-right: 0.5em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+}
+#keywords{
+  background-color: ${lightColorString};
+  height: 100%;
+  width: 100%;
+}
+#keywords::-webkit-search-cancel-button {   /* select all "X" buttons in search inputs */
+}
+#search .button{
+  background-color: ${mainColorString};
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  /*transform: scale(1, 1.8);*/
+}
+#search .spliter{
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  /*transform: scale(1, 1.8);*/
+}
+.list{
+  padding: 0 0 0 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.list *{
+  font-size: 1em;
+  background-color: ${mainColorString};
+  margin: 0 0 0.6em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6em 0.6em 0.6em 0.6em;
+}
+    `;
+      document.querySelector('style').innerHTML = style;
+    };
+    changeColor();
+    setInterval(changeColor, 1000);
   </script>
 </head>
 <body>
