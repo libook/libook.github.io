@@ -62,17 +62,9 @@
       const style=`
 *{
   font-size: 1.005em;
-  color: white;
+  color: #e4e4db;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
-  mask-image: url(/resources/texture.png);
-  -webkit-mask-image: url(/resources/texture.png);
-  mask-repeat: repeat;
-  -webkit-mask-repeat: repeat;
-  mask-size: 100px 100px;
-  -webkit-mask-size: 100px 100px;
-  mask-mode: luminance;
-  -webkit-mask-mode: luminance;
 }
 a{
   text-decoration: none;
@@ -83,7 +75,7 @@ input{
   -webkit-appearance: none;
 }
 input::placeholder{
-  color: darkgrey;
+  color: rgba(0,0,0,0.35);
 }
 body{
   display: flex;
@@ -98,16 +90,17 @@ body{
   height: 100%;
   border-radius: 1.2em;
   flex-grow: 1;
-  background-color: ${lightColorString};
+  background-color: ${darkColorString};
   margin-right: 0.5em;
   padding-left: 1.2em;
   padding-right: 1.2em;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.50), inset 0 1px 3px rgba(0,0,0,0.12);
 }
 #keywords{
-  background-color: ${lightColorString};
+  background-color: rgba(0,0,0,0);
   height: 100%;
   width: 100%;
 }
@@ -146,20 +139,30 @@ body{
   background-color: ${darkColorString};
   padding: 0 0 0 0;
   margin: 0 0 0 0;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.12),inset 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.24), inset 0 1px 3px rgba(0,0,0,0.12);
+}
+.texture{
+  mask-image: url(/resources/texture.png);
+  -webkit-mask-image: url(/resources/texture.png);
+  mask-repeat: repeat;
+  -webkit-mask-repeat: repeat;
+  mask-size: 90px 90px;
+  -webkit-mask-size: 90px 90px;
+  mask-mode: luminance;
+  -webkit-mask-mode: luminance;
 }
     `;
       document.querySelector('style').innerHTML = style;
     };
     changeColor();
-    setInterval(changeColor, 1000);
+    // setInterval(changeColor, 1000);
   </script>
 </head>
-<body>
-  <div class="list">
+<body class="texture">
+  <div class="list texture">
     <div class="divide"></div>
     <div id="search">
-      <div id="keywords-frame">
+      <div id="keywords-frame" class="texture">
         <input id="keywords" type="search" placeholder="Baidu is sucks!" autofocus />
       </div>
       <span class="button" onclick="search('google')">Google</span>
