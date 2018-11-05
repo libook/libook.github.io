@@ -65,6 +65,14 @@
   color: white;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
+  mask-image: url(/resources/texture.png);
+  -webkit-mask-image: url(/resources/texture.png);
+  mask-repeat: repeat;
+  -webkit-mask-repeat: repeat;
+  mask-size: 50px 50px;
+  -webkit-mask-size: 50px 50px;
+  mask-mode: luminance;
+  -webkit-mask-mode: luminance;
 }
 a{
   text-decoration: none;
@@ -113,7 +121,6 @@ body{
   /*transform: scale(1, 1.8);*/
 }
 .list{
-  padding: 0 0 0 0;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
