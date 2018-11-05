@@ -80,6 +80,7 @@ a{
 input{
   border: none;
   outline: none;
+  -webkit-appearance: none;
 }
 input::placeholder{
   color: darkgrey;
@@ -94,12 +95,16 @@ body{
   flex-direction: row;
 }
 #keywords-frame{
+  height: 100%;
   border-radius: 1.2em;
   flex-grow: 1;
   background-color: ${lightColorString};
   margin-right: 0.5em;
   padding-left: 1.2em;
   padding-right: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #keywords{
   background-color: ${lightColorString};
