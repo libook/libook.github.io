@@ -53,10 +53,10 @@
       const huePerSecond = 360 / (24 * 60 * 60);
       const secondsThisDay = now.getHours() * 60 * 60 + now.getMinutes() * 60 + now.getSeconds();
       const hueThisSecond = huePerSecond * secondsThisDay;
-      const hueThisSecondRollToBlue = (hueThisSecond + 240) % 360;
-      const mainColorString = `hsl(${hueThisSecondRollToBlue}, 25%, 31.25%)`;
-      const lightColorString = `hsl(${hueThisSecondRollToBlue}, 12.5%, 50%)`;
-      const darkColorString = `hsl(${hueThisSecondRollToBlue}, 25%, 25%)`;
+      const hueThisSecondRollToYellow = (hueThisSecond + 60) % 360;
+      const mainColorString = `hsl(${hueThisSecondRollToYellow}, 25%, 31.25%)`;
+      const lightColorString = `hsl(${hueThisSecondRollToYellow}, 12.5%, 50%)`;
+      const darkColorString = `hsl(${hueThisSecondRollToYellow}, 25%, 25%)`;
       document.querySelector("meta[name=theme-color]").setAttribute("content", mainColorString);
       document.querySelector("meta[name=apple-mobile-web-app-status-bar-style]").setAttribute("content", darkColorString);
       const style=`
